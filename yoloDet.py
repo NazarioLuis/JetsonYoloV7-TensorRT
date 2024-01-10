@@ -107,6 +107,7 @@ class YoloTRT():
         for j in range(len(result_boxes)):
             box = result_boxes[j]
             det = dict()
+            det["classId"] = int(result_classid[j])
             det["class"] = self.categories[int(result_classid[j])]
             det["conf"] = result_scores[j]
             det["box"] = box 
